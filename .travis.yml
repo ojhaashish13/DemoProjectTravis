@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: DemoProjectTravis.xcworkspace
+xcode_project: DemoProjectTravis.xcodeproj
 xcode_scheme: DemoProjectTravis
 before_script:
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/Example_AdHoc_Disribution.mobileprovision.enc
