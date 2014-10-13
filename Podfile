@@ -6,11 +6,11 @@
 pod 'AFNetworking', '~> 2.0'
 
 
-target 'DemoProjectTravis' do
+#target 'DemoProjectTravis' do
 
-end
+#end
 
-target 'DemoProjectTravisTests' do
+#target 'DemoProjectTravisTests' do
 
-end
+#end
 
