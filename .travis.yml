@@ -17,6 +17,6 @@ env:
   global:
   - secure: g5x+iCGZXGPhUYiET1hePmRV1ie9psWwJ6SO0yIDxYfGk1OJlwza7jHDU2WqoeXcC0xUISBQiQ2Nyui4YbR4eIQa3pB4pDRYDNs4RlwePn4GGM64sq9LtbS9Q+hoZYHXUeQj15ENfYp6z7n1Aq/n6/Uz0xKzkQccul4JX//y9/o=
   - APP_NAME="DemoProjectTravis"
-  - 'DEVELOPER_NAME="iPhone Distribution: {your_name} ({code})"'
+  - 'DEVELOPER_NAME="iPhone Distribution: V2 Solutions (JTKBCAGUVC)"'
   - PROFILE_NAME="TravisExample_Ad_Hoc"
   - secure: OnMQqAti6m7/x/hEytc0ZD9v3/2MI7WQCidwEixpfM0Iz0Rm5S4eK7tZn3bgIQtddz5KU5ZxKXHFO6Hrtp1sAuTbz6mJcBQRoY1yCckKSFHWKi6CqZ8WNziP8803kHY89mjHcRadR/SOrVj1r2xho+Rp8fIVQ5h2OysXoSxGYXA=
