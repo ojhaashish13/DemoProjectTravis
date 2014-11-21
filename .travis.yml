@@ -1,25 +1,24 @@
 language: objective-c
-xcode_project: DemoProjectTravis.xcodeproj
-xcode_scheme: DemoProjectTravis
 before_script:
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/Example_AdHoc_Disribution.mobileprovision.enc
-  -d -a -out scripts/profile/Example_AdHoc_Disribution.mobileprovision
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a
-  -out scripts/certs/dist.cer
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a
-  -out scripts/certs/dist.p12
 - ./scripts/add-key.sh
 - ./scripts/update-bundle.sh
-after_script:
-- ./scripts/remove-key.sh
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/TravisExample_Ad_Hoc.mobileprovision.enc -d -a -out scripts/profile/TravisExample_Ad_Hoc.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a -out scripts/certs/dist.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12
+script:
+- xcodebuild -project DemoProjectTravis.xcodeproj -target DemoProjectTravis -sdk iphonesimulator
+  ONLY_ACTIVE_ARCH=NO
+- xcodebuild test -project DemoProjectTravis.xcodeproj  -scheme
+  DemoProjectTravis  -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 after_success:
 - ./scripts/sign-and-upload.sh
+after_script:
+- ./scripts/remove-key.sh
+
 env:
   global:
+  - secure: g5x+iCGZXGPhUYiET1hePmRV1ie9psWwJ6SO0yIDxYfGk1OJlwza7jHDU2WqoeXcC0xUISBQiQ2Nyui4YbR4eIQa3pB4pDRYDNs4RlwePn4GGM64sq9LtbS9Q+hoZYHXUeQj15ENfYp6z7n1Aq/n6/Uz0xKzkQccul4JX//y9/o=
   - APP_NAME="DemoProjectTravis"
-  - 'DEVELOPER_NAME="iPhone Distribution: V2Solutions, Inc."'
-  - PROFILE_NAME="Example_AdHoc_Disribution"
-  - secure: DDm0eQBOhJXeaszwv9yE7LP8HvVt66CoLl3d1vJdEbMU8Q0SX1TQdoF2zeYIH2S+vgxeBuCZtT3aIH/7ATIyvnrGdU+kN+EtAkCyJtsol3kjgTd58+eyUdw5MVazh/1X1uyGUEpDmFlpIB30/Q2/jv5cPE4K+jeYvXNX+s1iniM=
-  - secure: rFryGGLWQ3kGbrGn4DdCSUAp6Ny1YSHDyUpD2MX8T+huRVHY5C8G/ksPcjZajGX+Jqx0WBYLF2+y71eLGL5m4m7FhGOMzwsqCD7JuecqtUmQn7/6LvV/vh9DvljI5T9dO7jE86HOnFNwdOOUeeKpxHmxN/4How49aYHGkj/jRa4=
-  - secure: GLXdw8X+cEuBUYjAfXB/XdYWJ1zRLIpn6oNn9PPDkNk44pp/9Iqi8UJvAi0i+ScaIXwBioi9fui5QyOsSBFkDHMhcbZJjYHcCaODtwEkUH6aPRm4izy1dEFtKN4WQcypv1xlVOL/TARt4sHJ92awDHNs9M2y6mLByAfjKfNAfyg=
-  - secure: RFBlr/AxEwqWZHSxWVIf4lZPRLbKcogbRwocqQpZ2S2HboOOf8HuHHO4TQJwoKRpWPXHNH/9i1OLbVLrsMXT4TQOzYvKQYmZKtt6k159QY55r3IdgE2Bz8bLWTec1bT4pMJb4pY/DEGyGyqqLy/qZVT3ELQSX2/cw4COBv1Hx3g=
+  - 'DEVELOPER_NAME="iPhone Distribution: {your_name} ({code})"'
+  - PROFILE_NAME="TravisExample_Ad_Hoc"
+  - secure: OnMQqAti6m7/x/hEytc0ZD9v3/2MI7WQCidwEixpfM0Iz0Rm5S4eK7tZn3bgIQtddz5KU5ZxKXHFO6Hrtp1sAuTbz6mJcBQRoY1yCckKSFHWKi6CqZ8WNziP8803kHY89mjHcRadR/SOrVj1r2xho+Rp8fIVQ5h2OysXoSxGYXA=

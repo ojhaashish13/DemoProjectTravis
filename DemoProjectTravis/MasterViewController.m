@@ -8,6 +8,8 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "Child.h"
+#import "Parent.h"
 
 @interface MasterViewController ()
 
@@ -23,6 +25,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+//    Parent *parent1 = [Child new];
+////    Child *child1 = [Child new];
+//    [parent1 abcMethod];
+////    [parent1 xyzM];
+//    
+//    Child *child1 = [Parent new];
+//    //    Child *child1 = [Child new];
+//    [child1 abcMethod];
+//    [child1 xyzMethod];
+    
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
