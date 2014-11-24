@@ -52,6 +52,5 @@ if [ ! -z "$HOCKEY_APP_ID" ] && [ ! -z "$HOCKEY_APP_TOKEN" ]; then
     -F "dsym=@$OUTPUTDIR/$APP_NAME.app.dSYM.zip" \
     -H "X-HockeyAppToken: $HOCKEY_APP_TOKEN" \
     https://rink.hockeyapp.net/api/2/apps/upload
-    
   echo "Upload finish"
 fi
