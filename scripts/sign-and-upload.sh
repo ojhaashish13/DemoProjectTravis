@@ -43,12 +43,13 @@ if [ ! -z "$HOCKEY_APP_ID" ] && [ ! -z "$HOCKEY_APP_TOKEN" ]; then
   echo "***************************"
   echo "* Uploading to Hockeyapp  *"
   echo "***************************"
-  echo curl https://rink.hockeyapp.net/api/2/apps/upload \
+  curl "https://rink.hockeyapp.net/api/2/apps/$HOCKEY_APP_ID/app_versions/upload" \
     -F status="2" \
     -F notify="0" \
-    -F notes="new version" \
+    -F notes="$RELEASE_NOTES" \
     -F notes_type="0" \
     -F ipa="@$OUTPUTDIR/$APP_NAME.ipa" \
     -F dsym="@$OUTPUTDIR/$APP_NAME.app.dSYM.zip" \
     -H "X-HockeyAppToken: $HOCKEY_APP_TOKEN"
+  echo "* Upload finish"
 fi
