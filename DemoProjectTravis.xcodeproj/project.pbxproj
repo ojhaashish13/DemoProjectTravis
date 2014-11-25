@@ -299,7 +299,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ashish ojha (2CCCF5K47F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: V2 Solutions (JTKBCAGUVC)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -319,7 +319,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "0ed916c9-ff99-4be6-b389-3484b9fd7f12";
+				PROVISIONING_PROFILE = "acd09b13-7359-407c-8364-d3f4573091f4";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -364,7 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ashish ojha (2CCCF5K47F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: V2 Solutions (JTKBCAGUVC)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				INFOPLIST_FILE = DemoProjectTravis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
